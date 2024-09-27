@@ -1,0 +1,51 @@
+-- Banco de dados: `cadastro_db`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `senha` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`) VALUES
+(2, 'Samuel Brasiliense Rodrigues', 'samuel.rodrigues1991@hotmail.com', '$2y$10$uZkNyFXCTMs4TLky/ye6eu3QxBkfXr1Y4.LHiZ19F685hXHL63Oxa'),
+(3, 'rodrigo', 'rodrigo@hotmail.com', '$2y$10$dzQDnSV8xffKrvb5IxOpPOdWR9eW.fUyr4yp.mIvMStJ.4wPD2FIS'),
+(4, 'talita', 'talita@hotmail.com', '$2y$10$3VebI.JJteur8ZfV6Sz5nu4j9Mr5RTv8taL1hHwS2gH7mrqjZ2lSC'),
+(5, 'talita', 'talita@hotmail.com.br', '$2y$10$1BN242Ki95Vp8fZpvJH4jezdn/uupkCIrnUlxhO6Fori4SZxPN8km');
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices para tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
+-- AUTO_INCREMENT de tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
