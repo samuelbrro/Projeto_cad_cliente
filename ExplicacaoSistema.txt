@@ -1,0 +1,50 @@
+Explicação do Sistema de Cadastro de Usuários
+Visão Geral
+O sistema de cadastro de usuários é uma aplicação web simples que permite aos usuários se registrarem fornecendo seu nome, e-mail e senha. O sistema valida os dados no lado do cliente e no servidor, armazena as informações em um banco de dados e retorna uma mensagem de sucesso ou erro.
+
+Estrutura do Sistema
+Interface do Usuário (HTML)
+
+Formulário de Cadastro: A interface é composta por um formulário HTML onde o usuário insere suas informações. Os campos são:
+Nome: Um campo de texto para o nome do usuário.
+Email: Um campo de e-mail para o endereço de e-mail.
+Senha: Um campo de senha para a senha do usuário.
+Validação do Formulário: Utiliza HTML5 para validação básica e JavaScript para validações adicionais (como comprimento da senha).
+Validação do Formulário (JavaScript)
+
+Validação no Lado do Cliente: Antes de o formulário ser enviado ao servidor, o JavaScript verifica se todos os campos estão preenchidos corretamente:
+Nome: Verifica se o campo não está vazio.
+Email: Verifica se o e-mail está no formato correto.
+Senha: Verifica se a senha tem pelo menos 8 caracteres.
+Feedback Visual: Se a validação falhar, o JavaScript exibe mensagens de erro ao usuário, impedindo o envio do formulário até que os problemas sejam corrigidos.
+Processamento de Dados (PHP)
+
+Conexão com o Banco de Dados: O PHP estabelece uma conexão com o banco de dados usando PDO (PHP Data Objects). A conexão é feita com as credenciais do banco de dados (host, nome do banco, usuário e senha).
+Validação e Sanitização:
+Email: Sanitiza e valida o e-mail para garantir que é válido e não está já registrado.
+Senha: Verifica se a senha atende aos critérios mínimos (pelo menos 8 caracteres) e a criptografa usando password_hash antes de armazená-la.
+Inserção de Dados: Se todas as validações forem bem-sucedidas, o PHP insere os dados do usuário no banco de dados. Caso contrário, exibe uma mensagem de erro.
+Mensagens de Feedback: Após o processamento, o PHP retorna uma mensagem de sucesso ou erro para o usuário, dependendo do resultado da operação.
+Banco de Dados (PostgreSQL/MySQL)
+
+Estrutura da Tabela: A tabela no banco de dados é chamada usuarios e possui os seguintes campos:
+id: Chave primária, auto-incremento, identifica exclusivamente cada usuário.
+nome: Armazena o nome do usuário.
+email: Armazena o e-mail do usuário.
+senha: Armazena a senha criptografada do usuário.
+data_criacao: Armazena a data e hora em que o registro foi criado.
+Conexão e Manipulação: O PHP usa PDO para se conectar ao banco de dados e executar comandos SQL para verificar a existência de e-mails duplicados e inserir novos registros.
+Passo a Passo do Funcionamento
+Acesso ao Formulário: O usuário acessa a página HTML (cadastro.html) que exibe o formulário de cadastro.
+
+Preenchimento e Envio do Formulário: O usuário preenche o formulário e o envia. O JavaScript realiza a validação no lado do cliente.
+
+Validação do Formulário: Se a validação do lado do cliente é bem-sucedida, o formulário é enviado ao servidor via método POST para o arquivo PHP (processa_cadastro.php).
+
+Processamento no Servidor:
+
+O PHP recebe os dados e realiza validações adicionais.
+Verifica se o e-mail já está registrado.
+Sanitiza e criptografa a senha.
+Insere os dados na tabela usuarios do banco de dados.
+Feedback ao Usuário: Após o processamento, o PHP retorna uma mensagem indicando se o cadastro foi bem-sucedido ou se houve um erro. Essa mensagem é exibida ao usuário na interface.

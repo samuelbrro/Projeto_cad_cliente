@@ -1,0 +1,24 @@
+/* css/style.css */
+body {
+    background-color: #b9c9d8;
+    background-image: url('https://media.licdn.com/dms/image/v2/D4D3DAQFxnNGMvQRk6Q/image-scale_191_1128/image-scale_191_1128/0/1714051437876/vox_tecnologia_cover?e=2147483647&v=beta&t=4_5No1ODlGf0QLC4O97SrFDOWPymsUuRaW6UaSCljT8');
+    background-position: top; /* Centraliza a imagem no fundo */
+    background-repeat: no-repeat; /* Impede que a imagem se repita */
+    background-attachment: fixed; /* Mantém a imagem fixa ao rolar */
+    background-size: 100%;
+    color: #050101; /* Cor do texto branca para contraste */
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Garante que o fundo cubra toda a altura da página */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif; /* Estilizando a fonte */
+}
+
+.container {
+    max-width: 400px;
+    padding-top: 50px;
+    
+}
+
